@@ -18,7 +18,7 @@ sudo docker-compose build
 sudo docker-compose up -d
 ```
 
-Service port is 9999 and Postgres Port is 6432. They both can be changed in the [docker-compose.yml](docker-compose.yml) file
+Service port is 9090 and Postgres Port is 6432. They both can be changed in the [docker-compose.yml](docker-compose.yml) file
 
 To stop the container run
 

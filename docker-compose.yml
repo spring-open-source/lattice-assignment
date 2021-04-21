@@ -1,0 +1,21 @@
+version: '3'
+services:
+  database:
+    image: postgres
+    ports:
+    - 6432:5432
+    environment:
+      POSTGRES_DB: lattice
+      POSTGRES_USER: lattice
+      POSTGRES_PASSWORD: lattice
+  service:
+    build: .
+    ports:
+    - 9090:8080
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://database/lattice
+      SPRING_DATASOURCE_USERNAME: lattice
+      SPRING_DATASOURCE_PASSWORD: lattice
+      SERVER_SERVLET_CONTEXT_PATH: /lattice
+    depends_on:
+    - database
